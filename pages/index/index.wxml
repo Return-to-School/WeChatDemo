@@ -1,0 +1,30 @@
+<!-- 首页轮播图 -->
+<view class='rotate-img'>
+  <swiper indicator-dots="true" indicator-color="#B7D3AB" indicator-active-color="#D9A43C"        autoplay="true" interval="3000" duration="1000" circular="true">
+    <block wx:for="{{img}}">
+      <swiper-item>
+        <view class="rotate-img-item" style='background-image:url("{{item}}")'></view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 导航栏 -->
+<view class="nav">
+  <view data-set="{{true}}" bindtap='ChangeDisplay' style='background-color:{{display?"#ccc":"#fff"}}'>正在进行</view>
+  <view  data-set="{{false}}" bindtap='ChangeDisplay' style='background-color:{{display?"#fff":"#ccc"}}'>历史活动</view>
+</view>
+
+<view>
+  <view class="active" wx:for="{{display?active:histroyActive}}">
+    <view class='active-img' style='background-image:url({{item.img}})'></view>
+    <view class='active-title'>{{item.title}}</view>
+    <view class='active-arrow' style='background-image:url({{imgUrl+"/arrow.png"}})'></view>
+  </view>
+  <view class="more">查看更多...</view>
+</view>
+
+<!-- 搜索框 -->
+<view class="search">    
+  <input type="text" placeholder='活动搜索' placeholder-class='input-word'/>
+</view>

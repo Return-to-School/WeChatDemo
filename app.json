@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/persomInfo/personInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#B7D3AB",
+    "navigationBarTitleText": "回母校",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#549078",
+    "color": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "活动",
+        "iconPath": "images/act.png",
+        "selectedIconPath": "images/act.png"
+      },
+      {
+        "pagePath": "pages/persomInfo/personInfo",
+        "text": "个人信息",
+        "iconPath": "images/info.png",
+        "selectedIconPath": "images/info.png"
+      }
+    ]
+  }
+}
