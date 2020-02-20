@@ -1,0 +1,13 @@
+<!--pages/activedetail/activedetail.wxml-->
+<view class='title'>
+  <view class='name'>{{active.name}}</view>
+  <view class='state'>报名审核中</view>
+</view>
+
+<view class='content'>
+  {{active.content}}
+</view>
+
+<view></view>
+<view></view>
+<view></view>

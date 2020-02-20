@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "wxc-icon": "/components/wxc-icon/dist/index",
+    "wxc-search":"/components/wxc-search/dist/index",
+    "wxc-tab":"/components/wxc-tab/dist/index",
+    "wxc-tab-panel": "/components/wxc-tab/dist/panel",
+    "wxc-panel":"/components/wxc-panel/dist/index",
+    "wxc-loadmore": "/components/wxc-loadmore/dist/index"
+  }
 }

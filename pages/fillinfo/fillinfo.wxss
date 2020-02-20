@@ -1,0 +1,15 @@
+/* pages/fillinfo/fillinfo.wxss */
+.block{
+  height:10px;
+  background-color: #f6f6f6;
+}
+
+.bt-cover{
+  background-color: #f6f6f6;
+  padding: 10px 0px;
+}
+
+.bt{
+  width:85%;
+  background-color: #B7D3AB;
+}

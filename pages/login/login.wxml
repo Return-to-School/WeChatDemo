@@ -1,0 +1,14 @@
+<!--pages/persomInfo/personInfo.wxml-->
+
+<!-- 顶部logo -->
+<view class='logo' style='background-image:url("/images/logo.gif")'></view>
+
+<!-- 账号与密码表单 -->
+<wxc-input type="text" title="帐号" placeholder="输入帐号"></wxc-input>
+<wxc-input type="text" title="密码" placeholder="输入密码"></wxc-input>
+
+<!-- 登录与注册按钮 -->
+<view class='bt'>
+<wxc-button size="large" value="登录" btnStyle="margin-top:15px;background-color:#B7D3AB"></wxc-button>
+<wxc-button size="large" value="注册" btnStyle="margin-top:15px;background-color:#B7D3AB"></wxc-button>
+</view>

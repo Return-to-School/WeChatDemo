@@ -1,0 +1,27 @@
+<!--pages/personinfo/personinfo.wxml-->
+
+<!-- 登录按钮 -->
+<view class='login'>
+  <view class='icon' style='background-image:url("/images/info.png")'></view>
+  <view class='bt' bindtap='to' data-url='/pages/login/login'>点击登录</view>
+</view>
+
+<view class='cell' style='margin-top:20px;' bindtap='to' data-url='/pages/fillinfo/fillinfo'>
+  <view class='text'>个人信息填写</view>
+  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+</view>
+
+<view class='cell'>
+  <view class='text'>正在审核的活动</view>
+  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+</view>
+
+<view class='cell'>
+  <view class='text'>已报名的活动</view>
+  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+</view>
+
+<view class='cell' style='margin-top:20px;'>
+  <view class='text'>帮助&联系</view>
+  <wxc-icon size="45" type="help" color='#2cb42f' style='margin:0 15px;'></wxc-icon>
+</view>

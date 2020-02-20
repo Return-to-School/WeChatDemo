@@ -1,0 +1,28 @@
+/* pages/activedetail/activedetail.wxss */
+page{
+  background-color: #f6f6f6;
+}
+.title{
+  background-color: #fff;
+  padding: 15px;
+
+}
+.name{
+  font-size: 1.5em;
+  font-weight:600;
+  color: #333;
+  padding: 0 0 15px 0;
+}
+.state{
+  color: #333;
+}
+
+.content{
+  margin-top:10px; 
+  padding: 10px;
+  text-indent: 2em;
+  word-break: break-all;
+  background-color: #fff;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}

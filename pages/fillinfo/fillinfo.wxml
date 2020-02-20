@@ -1,0 +1,23 @@
+<!--pages/fillinfo/fillinfo.wxml-->
+<wxc-notice scroll="{{true}}" close="{{true}}" show-icon="{{true}}" notice="{{notice}}" color="#fff" bgColor="#2cb42f"></wxc-notice>
+
+<wxc-input type="text" title="姓名" placeholder="输入姓名"></wxc-input>
+<wxc-input type="text" title="学号" placeholder="输入学号"></wxc-input>
+<wxc-input type="text" title="学院" placeholder="输入学院"></wxc-input>
+<wxc-input type="text" title="专业班级" placeholder="输入专业班级"></wxc-input>
+<wxc-input type="text" title="性别" placeholder="输入性别"></wxc-input>
+
+<view class="block"></view>
+<wxc-input type="text" title="联系电话" placeholder="输入电话"></wxc-input>
+<wxc-input type="text" title="邮箱" placeholder="输入邮箱"></wxc-input>
+<wxc-input type="text" title="建行卡号" placeholder="输入建设银行卡号"></wxc-input>
+
+<view class="block"></view>
+<wxc-input type="text" title="省" placeholder="输入电话"></wxc-input>
+<wxc-input type="text" title="市" placeholder="输入邮箱"></wxc-input>
+<wxc-input type="text" title="县" placeholder="输入建设银行卡号"></wxc-input>
+<wxc-input type="text" title="回访中学" placeholder="输入回访中学"></wxc-input>
+
+<view class='bt-cover'>
+  <button class='bt'>提交</button>
+</view>

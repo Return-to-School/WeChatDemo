@@ -1,6 +1,11 @@
+<!-- 搜索框 -->
+<view class="search-wrap">
+  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F"></wxc-search>
+</view>
+
 <!-- 首页轮播图 -->
 <view class='rotate-img'>
-  <swiper indicator-dots="true" indicator-color="#B7D3AB" indicator-active-color="#D9A43C"        autoplay="true" interval="3000" duration="1000" circular="true">
+  <swiper indicator-dots="true" indicator-color="#B7D3AB" indicator-active-color="#D9A43C" autoplay="true" interval="3000" duration="1000" circular="true">
     <block wx:for="{{img}}">
       <swiper-item>
         <view class="rotate-img-item" style='background-image:url("{{item}}")'></view>
@@ -9,22 +14,31 @@
   </swiper>
 </view>
 
-<!-- 导航栏 -->
-<view class="nav">
-  <view data-set="{{true}}" bindtap='ChangeDisplay' style='background-color:{{display?"#ccc":"#fff"}}'>正在进行</view>
-  <view  data-set="{{false}}" bindtap='ChangeDisplay' style='background-color:{{display?"#fff":"#ccc"}}'>历史活动</view>
-</view>
+<!-- tab导航栏 -->
+<wxc-tab active-text-color="#2CB42F" active-line-color="#2CB42F" component-id="c1" animate="{{true}}">
 
-<view>
-  <view class="active" wx:for="{{display?active:histroyActive}}">
-    <view class='active-img' style='background-image:url({{item.img}})'></view>
-    <view class='active-title'>{{item.title}}</view>
-    <view class='active-arrow' style='background-image:url({{imgUrl+"/arrow.png"}})'></view>
-  </view>
-  <view class="more">查看更多...</view>
-</view>
+  <wxc-tab-panel tab-index="{{0}}" component-id="c1" label="正在进行">
+    <!-- 正在进行活动展示 -->
 
-<!-- 搜索框 -->
-<view class="search">    
-  <input type="text" placeholder='活动搜索' placeholder-class='input-word'/>
-</view>
+    <view class='active' wx:for="{{active}}" bindtap='toActive'>
+      <view class='act-title'>{{item.title}}</view>
+      <view class='act-content'>{{item.content}}</view>
+    </view>
+
+    <wxc-loadmore text="加载更多..."></wxc-loadmore>
+
+  </wxc-tab-panel>
+
+  <wxc-tab-panel tab-index="{{1}}" component-id="c1" label="历史活动">
+
+    <!-- 历史活动展示 -->
+    <view class='active' wx:for="{{active}}">
+      <view class='act-title'>{{item.title}}</view>
+      <view class='act-content'>{{item.content}}</view>
+    </view>
+
+    <wxc-loadmore text="加载更多..."></wxc-loadmore>
+
+  </wxc-tab-panel>
+
+</wxc-tab>

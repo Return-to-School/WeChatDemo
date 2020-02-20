@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/persomInfo/personInfo"
+    "pages/login/login",
+    "pages/personinfo/personinfo",
+    "pages/fillinfo/fillinfo",
+    "pages/activedetail/activedetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +24,7 @@
         "selectedIconPath": "images/act.png"
       },
       {
-        "pagePath": "pages/persomInfo/personInfo",
+        "pagePath": "pages/personinfo/personinfo",
         "text": "个人信息",
         "iconPath": "images/info.png",
         "selectedIconPath": "images/info.png"

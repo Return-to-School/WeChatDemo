@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wxc-input": "/components/wxc-input/dist/index",
+    "wxc-notice": "/components/wxc-notice/dist/index",
+        "wxc-button": "/components/wxc-button/dist/index"
+  },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#B7D3AB",
+    "navigationBarTitleText": "信息填写",
+    "navigationBarTextStyle": "black"
+}

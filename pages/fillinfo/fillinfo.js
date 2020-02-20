@@ -1,11 +1,11 @@
-// pages/persomInfo/personInfo.js
+// pages/fillinfo/fillinfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    notice:"本页填写的信息用于报名活动"
   },
 
   /**
