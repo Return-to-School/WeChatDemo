@@ -49,5 +49,10 @@ Page({
     wx.navigateTo({
       url: '/pages/activedetail/activedetail'
     })
+  },
+  toSearch:function(event){
+    wx.navigateTo({
+      url: '/pages/searchresult/searchresult' + '?value=' + event.detail.value
+    })
   }
 })

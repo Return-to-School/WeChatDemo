@@ -1,6 +1,6 @@
 <!-- 搜索框 -->
 <view class="search-wrap">
-  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F"></wxc-search>
+  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F" bind:confirm="toSearch"></wxc-search>
 </view>
 
 <!-- 首页轮播图 -->

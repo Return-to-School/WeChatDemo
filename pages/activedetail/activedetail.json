@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "wxc-button": "/components/wxc-button/dist/index"
+  },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#B7D3AB",
   "navigationBarTitleText": "活动详情",

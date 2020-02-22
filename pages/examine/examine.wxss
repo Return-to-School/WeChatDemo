@@ -1,0 +1,28 @@
+/* pages/examine/examine.wxss */
+/* pages/searchresult/searchresult.wxss */
+page{
+  background-color: #f0f0f0;
+}
+
+.active {
+  width: 92%;
+  background-color: #fff;
+  border-left: 1px solid #2cb42f;
+  border-right: 1px solid #2cb42f;
+  border-radius: 3px;
+  padding: 15px 5px;
+  margin: 15px auto;
+}
+.act-title {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.act-content {
+  overflow: hidden;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}

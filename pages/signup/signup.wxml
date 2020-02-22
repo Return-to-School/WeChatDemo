@@ -1,0 +1,7 @@
+<!--pages/signup/signup.wxml-->
+
+<!-- 活动事件 -->
+<view class='active' wx:for="{{active}}" bindtap='toActive'>
+  <view class='act-title'>{{item.title}}</view>
+  <view class='act-content'>{{item.content}}</view>
+</view>

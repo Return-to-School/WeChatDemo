@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wxc-icon": "/components/wxc-icon/dist/index",
+    "wxc-search": "/components/wxc-search/dist/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#B7D3AB",
+  "navigationBarTitleText": "搜索结果",
+  "navigationBarTextStyle": "black"
+}

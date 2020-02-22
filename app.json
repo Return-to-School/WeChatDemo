@@ -4,7 +4,11 @@
     "pages/login/login",
     "pages/personinfo/personinfo",
     "pages/fillinfo/fillinfo",
-    "pages/activedetail/activedetail"
+    "pages/activedetail/activedetail",
+    "pages/searchresult/searchresult",
+    "pages/help/help",
+    "pages/signup/signup",
+    "pages/examine/examine"
   ],
   "window": {
     "backgroundTextStyle": "light",
