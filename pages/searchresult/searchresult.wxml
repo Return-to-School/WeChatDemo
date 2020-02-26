@@ -2,11 +2,16 @@
 
 <!-- 搜索框 -->
 <view class="search-wrap">
-  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F" bind:confirm="toSearch"></wxc-search>
+  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F" bind:confirm="toSearch" init-value="{{initValue}}"></wxc-search>
 </view>
 
 <!-- 活动事件 -->
-<view class='active' wx:for="{{active}}" bindtap='toActive'>
-  <view class='act-title'>{{item.title}}</view>
+<view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}">
+  <view class='act-title'>{{item.name}}</view>
   <view class='act-content'>{{item.content}}</view>
+</view>
+<!-- 无查询数据时 -->
+<view class='no-found' wx:if="{{active.length==0}}">
+  <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
+  <view>无相关结果</view>
 </view>

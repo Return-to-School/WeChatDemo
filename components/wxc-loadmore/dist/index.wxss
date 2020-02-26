@@ -1,5 +1,5 @@
 .loadmore {
-    margin:0 auto 15px; 
+    margin:10px auto 10px; 
     display: flex;
     width: 95%;
     height: 70rpx;

@@ -53,6 +53,10 @@ exports.default = Component({
     btnColor: {
       type: String,
       value: '#333' // 按钮颜色
+    },
+    initValue:{
+      type:String,
+      value:''
     }
   },
   data: {
@@ -89,6 +93,13 @@ exports.default = Component({
         value: '',
         _showClear: false
       });
+    }
+  },
+  pageLifetimes: {
+    show: function () {
+      console.log(this.data.initValue);
+      this.data.value = this.data.initValue;
+      this.setData(this.data);
     }
   }
 });

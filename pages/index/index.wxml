@@ -1,6 +1,6 @@
 <!-- 搜索框 -->
 <view class="search-wrap">
-  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入内容" button="搜索" btn-color="#2CB42F" bind:confirm="toSearch"></wxc-search>
+  <wxc-search class="search" bg-color="#f6f6f6" color="#000" icon-color="#cacff1" ph-color="#cacff1" placeholder="输入活动名称搜索" button="搜索" btn-color="#2CB42F" bind:confirm="toSearch"></wxc-search>
 </view>
 
 <!-- 首页轮播图 -->
@@ -20,25 +20,35 @@
   <wxc-tab-panel tab-index="{{0}}" component-id="c1" label="正在进行">
     <!-- 正在进行活动展示 -->
 
-    <view class='active' wx:for="{{active}}" bindtap='toActive'>
-      <view class='act-title'>{{item.title}}</view>
+    <view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}">
+      <view class='act-title'>{{item.name}}</view>
       <view class='act-content'>{{item.content}}</view>
     </view>
 
-    <wxc-loadmore text="加载更多..."></wxc-loadmore>
+    <wxc-loadmore text="加载更多..." wx:if="{{active.length!=0}}" bindtap="moreAct" data-name="active"></wxc-loadmore>
+
+    <!-- 没有数据时刷新 -->
+    <view class='no-found' wx:if="{{active.length==0}}">
+      <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
+      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB"  bindtap="refresh"></wxc-button>
+    </view>
 
   </wxc-tab-panel>
 
   <wxc-tab-panel tab-index="{{1}}" component-id="c1" label="历史活动">
 
     <!-- 历史活动展示 -->
-    <view class='active' wx:for="{{active}}">
-      <view class='act-title'>{{item.title}}</view>
+    <view class='active' wx:for="{{historyActive}}" wx:if="{{historyActive.length!=0}}">
+      <view class='act-title'>{{item.name}}</view>
       <view class='act-content'>{{item.content}}</view>
     </view>
-
-    <wxc-loadmore text="加载更多..."></wxc-loadmore>
-
+    <wxc-loadmore text="加载更多..." wx:if="{{historyActive.length!=0}}" bindtap="moreAct" data-name="histotyActive"></wxc-loadmore>
+    
+    <!-- 没有数据时刷新 -->
+    <view class='no-found' wx:if="{{historyActive.length==0}}">
+      <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
+      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB"  bindtap="refresh"></wxc-button>
+    </view>
   </wxc-tab-panel>
 
 </wxc-tab>

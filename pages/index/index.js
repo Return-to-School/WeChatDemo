@@ -1,58 +1,134 @@
 const app = getApp();
 Page({
-  data:{
-    imgUrl:app.imgUrl,
+  data: {
+    imgUrl: app.imgUrl,
+    baseURL: app.baseURL,
     img: [
-      "http://img3.imgtn.bdimg.com/it/u=1670524489,3110547408&fm=26&gp=0.jpg",  
+      "http://img3.imgtn.bdimg.com/it/u=1670524489,3110547408&fm=26&gp=0.jpg",
       "http://img4.imgtn.bdimg.com/it/u=1906892428,3163048084&fm=26&gp=0.jpg",
-      "http://img5.imgtn.bdimg.com/it/u=3914465514,1089330837&fm=26&gp=0.jpg"    
-      ],    //轮播图图片地址
-      display:true,    //为true显示活动，为false显示以往活动
-      active:[
-        {
-          title:"活动一",
-          content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-        },
-        {
-          title: "活动二",
-          content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-        },
-        {
-          title: "活动三",
-          content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-        },
-        {
-          title: "活动四",
-          content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-        }
-      ],    //现在进行的活动
-    histroyActive: [
-      {
-        title: "活动一",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      },
-      {
-        title: "活动二",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      },
-      {
-        title: "活动三",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      },
-      {
-        title: "活动四",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      }
-    ]    //以往的活动
+      "http://img5.imgtn.bdimg.com/it/u=3914465514,1089330837&fm=26&gp=0.jpg"
+    ], //轮播图图片地址
+    display: true, //为true显示活动，为false显示以往活动
+    active: [], //现在进行的活动
+    historyActive: [], //以往的活动
+    currPage: 1, //正在进行活动的当前页面
+    historyCurrPage: 1, //以往活动的当前页面
+    pageSize: 4 //设置每页面条数
   },
-  toActive:function(event){
+  toActive: function(event) {
     wx.navigateTo({
       url: '/pages/activedetail/activedetail'
     })
   },
-  toSearch:function(event){
+  toSearch: function(event) {
+    if (event.detail.value==""){
+      wx.showToast({
+        title: ' 搜索内容不能为空 ',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
     wx.navigateTo({
       url: '/pages/searchresult/searchresult' + '?value=' + event.detail.value
     })
+  },
+  getAct(page) { //请求当前活动页面数据，page为页面数
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: 'true'
+    })
+
+    wx.request({
+      url: this.data.baseURL + '/activity/all/underway-act?currPage=' + page + '&pageSize=' + this.data.pageSize,
+      method: "GET",
+      success(res) {
+        wx.hideLoading();
+        console.log(res.data);
+        if (res.data.result.length == 0) {
+          that.data.currPage--;
+          that.setData(that.data);
+          wx.showToast({
+            title: '没有更多了...',
+            icon: 'success',
+            duration: 2000
+          })
+          return;
+        }
+        that.data.active.push(...res.data.result);
+        that.setData(that.data);
+        wx.showToast({
+          title: '加载成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail(res) {
+        wx.hideLoading();
+        wx.showToast({
+          title: '加载失败，请稍后重试',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
+  getHistoryAct(page) { //请求当前活动页面数据，page为页面数
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: 'true'
+    })
+
+    wx.request({
+      url: this.data.baseURL + '/activity/history/?currPage=' + page + '&pageSize=' + this.data.pageSize,
+      method: "GET",
+      success(res) {
+        wx.hideLoading();
+        console.log(res.data);
+        if (res.data.result.length == 0) {
+          that.data.historyCurrPage--;
+          that.setData(that.data);
+          wx.showToast({
+            title: '没有更多了...',
+            icon: 'success',
+            duration: 2000
+          })
+          return;
+        }
+        that.data.historyActive.push(...res.data.result);
+        that.setData(that.data);
+        wx.showToast({
+          title: '加载成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail(res) {
+        wx.hideLoading();
+        wx.showToast({
+          title: '加载失败，请稍后重试',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
+  refresh(event) {
+    this.onLoad();
+  },
+  moreAct(event) {
+    if (event.target.dataset.name == "active") {
+      this.data.currPage++;
+      this.getAct(this.data.currPage);
+    } else {
+      this.data.historyCurrPage++;
+      this.getHistoryAct(this.data.historyCurrPage);
+    }
+  },
+  onLoad: function() {
+    this.getAct(this.data.currPage);
+    this.getHistoryAct(this.data.historyCurrPage);
   }
 })

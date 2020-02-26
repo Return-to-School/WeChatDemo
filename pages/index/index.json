@@ -5,6 +5,7 @@
     "wxc-tab":"/components/wxc-tab/dist/index",
     "wxc-tab-panel": "/components/wxc-tab/dist/panel",
     "wxc-panel":"/components/wxc-panel/dist/index",
-    "wxc-loadmore": "/components/wxc-loadmore/dist/index"
+    "wxc-loadmore": "/components/wxc-loadmore/dist/index",
+    "wxc-button": "/components/wxc-button/dist/index"
   }
 }

@@ -1,26 +1,40 @@
 // pages/searchresult/searchresult.js
+const app = getApp();
 Page({
   data: {
-    active: [{
-        title: "活动一",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
+    initValue:"",
+    active: []    //活动
+  },
+  getAct(mes) { //请求活动信息
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: 'true'
+    })
+
+    wx.request({
+      url: app.baseURL+ '/activity/search-by-name?key='+mes+'&currPage=1&pageSize=1000',
+      method: "GET",
+      success(res) {
+        wx.hideLoading();
+        console.log(res.data);
+        that.data.active = res.data.result;
+        that.setData(that.data);
       },
-      {
-        title: "活动二",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      },
-      {
-        title: "活动三",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
-      },
-      {
-        title: "活动四",
-        content: "1月22日9时许，已经踏上返乡旅程的武汉大学人民医院病理科医生吴小艳，收到医院发出的医疗支援号召后，立刻返回武汉，两个多小时后就出现在岗位上。“大家都在战斗，只有回到战场，我才安心。”吴小艳说。“我的‘战友’都在这里，越是危险的时候，越是要冲在最前面！”严丽是华中科技大学附属同济医院急诊内科副主任医师，原本已向医院申请休假，1月22日，当全家准备外出旅行时，她却从机场回到了医院。"
+      fail(res) {
+        wx.hideLoading();
+        wx.showToast({
+          title: '加载失败，请稍后重试',
+          icon: 'none',
+          duration: 2000
+        })
       }
-    ]
+    })
   },
   onLoad: function(options) {
-    console.log(options.value);
+    this.data.initValue = options.value;
+    this.setData(this.data);
+    this.getAct(options.value);
   },
   toActive: function(event) {
     wx.navigateTo({
