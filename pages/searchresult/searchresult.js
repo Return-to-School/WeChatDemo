@@ -2,8 +2,8 @@
 const app = getApp();
 Page({
   data: {
-    initValue:"",
-    active: []    //活动
+    initValue: "",
+    active: [] //活动
   },
   getAct(mes) { //请求活动信息
     var that = this;
@@ -13,7 +13,7 @@ Page({
     })
 
     wx.request({
-      url: app.baseURL+ '/activity/search-by-name?key='+mes+'&currPage=1&pageSize=1000',
+      url: app.baseURL + '/activity/search-by-name?key=' + mes + '&currPage=1&pageSize=1000',
       method: "GET",
       success(res) {
         wx.hideLoading();
@@ -37,6 +37,12 @@ Page({
     this.getAct(options.value);
   },
   toActive: function(event) {
+    var num = event.currentTarget.dataset.num
+    var active =this.data.active[num];
+    wx.setStorage({
+      key: "ActiveDetail",
+      data: active
+    })
     wx.navigateTo({
       url: '/pages/activedetail/activedetail'
     })

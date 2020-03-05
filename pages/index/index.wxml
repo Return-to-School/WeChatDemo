@@ -20,7 +20,7 @@
   <wxc-tab-panel tab-index="{{0}}" component-id="c1" label="正在进行">
     <!-- 正在进行活动展示 -->
 
-    <view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}">
+    <view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}" data-num="{{index}}" data-type="active">
       <view class='act-title'>{{item.name}}</view>
       <view class='act-content'>{{item.content}}</view>
     </view>
@@ -30,7 +30,7 @@
     <!-- 没有数据时刷新 -->
     <view class='no-found' wx:if="{{active.length==0}}">
       <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
-      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB"  bindtap="refresh"></wxc-button>
+      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB" bindtap="refresh"></wxc-button>
     </view>
 
   </wxc-tab-panel>
@@ -38,16 +38,16 @@
   <wxc-tab-panel tab-index="{{1}}" component-id="c1" label="历史活动">
 
     <!-- 历史活动展示 -->
-    <view class='active' wx:for="{{historyActive}}" wx:if="{{historyActive.length!=0}}">
+    <view class='active' bindtap='toActive' wx:for="{{historyActive}}" wx:if="{{historyActive.length!=0}}" data-num="{{index}}">
       <view class='act-title'>{{item.name}}</view>
       <view class='act-content'>{{item.content}}</view>
     </view>
     <wxc-loadmore text="加载更多..." wx:if="{{historyActive.length!=0}}" bindtap="moreAct" data-name="histotyActive"></wxc-loadmore>
-    
+
     <!-- 没有数据时刷新 -->
     <view class='no-found' wx:if="{{historyActive.length==0}}">
       <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
-      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB"  bindtap="refresh"></wxc-button>
+      <wxc-button size="large" value="点击刷新" btnStyle="margin-top:15px;background-color:#B7D3AB" bindtap="refresh"></wxc-button>
     </view>
   </wxc-tab-panel>
 

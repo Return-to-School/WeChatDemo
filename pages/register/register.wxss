@@ -1,0 +1,6 @@
+/* pages/register/register.wxss */
+.bt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

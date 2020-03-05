@@ -1,23 +1,23 @@
 <!--pages/fillinfo/fillinfo.wxml-->
 <wxc-notice scroll="{{true}}" close="{{true}}" show-icon="{{true}}" notice="{{notice}}" color="#fff" bgColor="#2cb42f"></wxc-notice>
 
-<wxc-input type="text" title="姓名" placeholder="输入姓名"></wxc-input>
-<wxc-input type="text" title="学号" placeholder="输入学号"></wxc-input>
-<wxc-input type="text" title="学院" placeholder="输入学院"></wxc-input>
-<wxc-input type="text" title="专业班级" placeholder="输入专业班级"></wxc-input>
-<wxc-input type="text" title="性别" placeholder="输入性别"></wxc-input>
+<wxc-input type="text" title="姓名"disabled='true' value="{{userInfo.name}}"></wxc-input>
+<wxc-input type="text" title="学号" disabled='true' value="{{userInfo.studentCard}}"></wxc-input>
+<wxc-input type="text" title="学院" disabled='true' value="{{userInfo.college}}"></wxc-input>
+<wxc-input type="text" title="专业班级" disabled='true' value="{{userInfo.classname}}"></wxc-input>
+<wxc-input type="text" title="性别" disabled='true' value="{{userInfo.gender.desc}}"></wxc-input>
 
 <view class="block"></view>
-<wxc-input type="text" title="联系电话" placeholder="输入电话"></wxc-input>
-<wxc-input type="text" title="邮箱" placeholder="输入邮箱"></wxc-input>
-<wxc-input type="text" title="建行卡号" placeholder="输入建设银行卡号"></wxc-input>
+<wxc-input type="text" title="联系电话" placeholder="输入电话" value="{{userInfo.phone}}" bindinput="inputedit" data-type="phone"></wxc-input>
+<wxc-input type="text" title="邮箱" placeholder="输入邮箱" value="{{userInfo.email}}" bindinput="inputedit" data-type="email"></wxc-input>
+<wxc-input type="text" title="QQ" placeholder="输入QQ号" value="{{userInfo.qq}}" bindinput="inputedit" data-type="qq"></wxc-input> 
 
 <view class="block"></view>
-<wxc-input type="text" title="省" placeholder="输入电话"></wxc-input>
-<wxc-input type="text" title="市" placeholder="输入邮箱"></wxc-input>
-<wxc-input type="text" title="县" placeholder="输入建设银行卡号"></wxc-input>
-<wxc-input type="text" title="回访中学" placeholder="输入回访中学"></wxc-input>
+<wxc-input type="text" title="身份证" placeholder="输入身份证号" value="{{userInfo.idCard}}" bindinput="inputedit" data-type="idCard"></wxc-input> 
+<wxc-input type="text" title="建行卡号" placeholder="输入建设银行卡号" value="{{userInfo.bankCard}}" bindinput="inputedit" data-type="bankCard"></wxc-input>
+<wxc-input type="text" title="籍贯" placeholder="样式：xx省-xx市-xx县" value="{{userInfo.origin}}" bindinput="inputedit" data-type="origin"></wxc-input> 
+<wxc-input type="text" title="回访中学" placeholder="输入回访中学" value="{{userInfo.highSchool}}" bindinput="inputedit" data-type="highSchool"></wxc-input>
 
 <view class='bt-cover'>
-  <button class='bt'>提交</button>
+  <button class='bt' bindtap='submitInfo'>提交</button>
 </view>

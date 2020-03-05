@@ -6,7 +6,7 @@
 </view>
 
 <!-- 活动事件 -->
-<view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}">
+<view class='active' wx:for="{{active}}" bindtap='toActive' wx:if="{{active.length!=0}}" data-num="{{index}}">
   <view class='act-title'>{{item.name}}</view>
   <view class='act-content'>{{item.content}}</view>
 </view>

@@ -1,24 +1,30 @@
 <!--pages/personinfo/personinfo.wxml-->
 
 <!-- 登录按钮 -->
-<view class='login'>
+<view class='login' wx:if="{{!isLogin}}">
   <view class='icon' style='background-image:url("/images/info.png")'></view>
   <view class='bt' bindtap='to' data-url='/pages/login/login'>点击登录</view>
 </view>
 
+<!-- 已登录状态栏 -->
+<view class='sign-in' wx:if="{{isLogin}}">
+  <view>{{userInfo.name}}</view>
+  <view>{{userInfo.studentCard}}</view>
+</view>
+
 <view class='cell' style='margin-top:20px;' bindtap='to' data-url='/pages/fillinfo/fillinfo'>
-  <view class='text'>个人信息填写</view>
-  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+  <view class='text'>个人详细信息填写</view>
+  <wxc-icon size="35" type="arrow-right" style='margin:0 15px;'></wxc-icon>
 </view>
 
 <view class='cell' bindtap='to' data-url='/pages/examine/examine'>
   <view class='text'>正在审核的活动</view>
-  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+  <wxc-icon size="35" type="arrow-right" style='margin:0 15px;'></wxc-icon>
 </view>
 
 <view class='cell' bindtap='to' data-url='/pages/signup/signup'>
   <view class='text'>已报名的活动</view>
-  <wxc-icon size="35" type="arrow-right"></wxc-icon>
+  <wxc-icon size="35" type="arrow-right" style='margin:0 15px;'></wxc-icon>
 </view>
 
 <view class='cell' style='margin-top:20px;'  bindtap='to' data-url='/pages/help/help'>

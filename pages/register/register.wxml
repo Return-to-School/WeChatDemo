@@ -1,0 +1,11 @@
+<!--pages/register/register.wxml-->
+<!-- 注册表单 -->
+
+<wxc-input type="text" title="学号" type='number' placeholder="输入学号" value='{{account}}' bindinput="inputedit" data-type="account"></wxc-input>
+<wxc-input type="text" title="姓名" placeholder="输入姓名" value="{{name}}" bindinput="inputedit" data-type="name"></wxc-input>
+<wxc-input type="text" title="密码" password='true' placeholder="输入密码" value="{{password}}" bindinput="inputedit" data-type="password"></wxc-input>
+<wxc-input type="text" title="确定密码" password='true' placeholder="再次输入密码" value="{{confirm}}" bindinput="inputedit" data-type="confirm"></wxc-input>
+
+<view class="bt">
+  <wxc-button size="large" value="注册" btnStyle="margin-top:15px;background-color:#B7D3AB" bindtap="toRejister" bindtap="toRegister"></wxc-button>
+</view>

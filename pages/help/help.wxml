@@ -1,4 +1,6 @@
 <!--pages/help/help.wxml-->
-<view>
-  
+<view class='text'>
+  此小程序旨在为各师生提供回母校活动的预定与查看，如在使用过程中存在问题，请拨打电话：
+  xxx：xxx-xxxxxx
+  xxx：xxx-xxxxxxx
 </view>

@@ -25,17 +25,21 @@
 
 <view class='info'>
   <view>活动结束时间</view>
-  <view>{{active.applyStartTime}}</view>
+  <view>{{active.applyEndTime}}</view>
 </view>
 
-<view class='info'>
+<view class="no-feedback" wx:if="{{!active.needExamine}}">
+  本活动不需要上传反馈材料
+</view>
+
+<view class='info' wx:if="{{active.needExamine}}">
   <view>反馈开始时间</view>
-  <view>{{active.applyStartTime}}</view>
+  <view>{{active.feedbackStartTime}}</view>
 </view>
 
-<view class='info'>
+<view class='info' wx:if="{{active.needExamine}}">
   <view>反馈结束时间</view>
-  <view>{{active.applyStartTime}}</view>
+  <view>{{active.feedbackEndTime}}</view>
 </view>
 
 <!-- 内容 -->
@@ -44,10 +48,13 @@
   {{active.content}}
 </view>
 
-
-
 <!-- 预约与文件下载按钮 -->
 <view class="bt">
   <wxc-button size="normal" type="selection" value="预约"></wxc-button>
-   <wxc-button size="normal" type="selection" value="下载文件"></wxc-button>
+   <wxc-button size="normal" type="selection" value="下载文件" bindtap='showPopup'></wxc-button>
 </view>
+
+<!-- 文件下载弹出框 -->
+  <wxc-popup class="downloadFile" animation-mode="bottom" align="bottom" locked="true">
+    <view class="popup__content">Hello World</view>
+  </wxc-popup>

@@ -16,6 +16,12 @@ Page({
     pageSize: 4 //设置每页面条数
   },
   toActive: function(event) {
+    var num = event.currentTarget.dataset.num
+    var active = event.currentTarget.dataset.type == "active" ? this.data.active[num] : this.data.historyActive[num];
+    wx.setStorage({
+      key: "ActiveDetail",
+      data: active
+    })
     wx.navigateTo({
       url: '/pages/activedetail/activedetail'
     })

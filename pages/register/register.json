@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wxc-input": "/components/wxc-input/dist/index",
+    "wxc-button": "/components/wxc-button/dist/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#B7D3AB",
+  "navigationBarTitleText": "注册",
+  "navigationBarTextStyle": "black"
+}

@@ -3,5 +3,9 @@
     "wxc-button": "/components/wxc-button/dist/index",
     "wxc-label": "/components/wxc-label/dist/index",
     "wxc-icon": "/components/wxc-icon/dist/index"
-  }
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#B7D3AB",
+  "navigationBarTitleText": "个人信息",
+  "navigationBarTextStyle": "black"
 }
