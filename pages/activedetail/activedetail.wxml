@@ -18,7 +18,7 @@
   <view>{{active.creator}}</view>
 </view>
 <!-- 时间 -->
-<view class='info' >
+<view class='info'>
   <view>活动开始时间</view>
   <view>{{active.applyStartTime}}</view>
 </view>
@@ -50,11 +50,32 @@
 
 <!-- 预约与文件下载按钮 -->
 <view class="bt">
-  <wxc-button size="normal" type="selection" value="预约"></wxc-button>
-   <wxc-button size="normal" type="selection" value="下载文件" bindtap='showPopup'></wxc-button>
+  <wxc-button size="normal" type="selection" value="预约" bindtap=''></wxc-button>
+  <wxc-button size="normal" type="selection" value="下载文件" bindtap='showPopup'></wxc-button>
 </view>
 
 <!-- 文件下载弹出框 -->
-  <wxc-popup class="downloadFile" animation-mode="bottom" align="bottom" locked="true">
-    <view class="popup__content">Hello World</view>
-  </wxc-popup>
+<wxc-popup class="downloadFile" animation-mode="bottom" align="bottom" locked="true">
+  <view class='download-block'>
+    <wxc-icon size="40" type='close' style='float:right;margin:5px;' bindtap='hidePopup'></wxc-icon>
+
+    <!-- 无文件下载显示的图像 -->
+    <view wx:if="{{filenames.length==0}}" class='no-found'>
+      <view class='no-found-img' style='background-image:url("/images/nofound.jpg")'></view>
+      <view>无可下载文件</view>
+    </view>
+
+    <!-- 有文件时的显示 -->
+    <view wx:if="{{filenames.length!=0}}" class="checkbox">
+      <checkbox-group bindchange="checkboxChange" class="checkbox-item">
+        <label wx:for="{{filenames}}">
+          <checkbox value="{{item}}"/>{{item}}
+        </label>
+      </checkbox-group>
+      <view class='bt2'>
+        <wxc-button size="normal" type="selection" value="点击下载"></wxc-button>
+      </view>
+    </view>
+
+  </view>
+</wxc-popup>

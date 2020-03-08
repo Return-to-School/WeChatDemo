@@ -2,7 +2,8 @@
   "usingComponents": {
     "wxc-button": "/components/wxc-button/dist/index",
     "wxc-popup": "/components/wxc-popup/dist/index",
-    "wxc-mask": "/components/wxc-mask/dist/index"
+    "wxc-mask": "/components/wxc-mask/dist/index",
+    "wxc-icon": "/components/wxc-icon/dist/index"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#B7D3AB",
